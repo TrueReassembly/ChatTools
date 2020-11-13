@@ -13,7 +13,7 @@ public class HelpCommand implements CommandExecutor {
         sender.sendMessage(ChatColor.GRAY + "----------------------------------------------------");
         sender.sendMessage(ChatColor.GOLD + "ChatTools " + ChatColor.GRAY + "by Reassembly" + ChatColor.DARK_GRAY + " [RELEASE 1]");
         sender.sendMessage(ChatColor.GOLD + "/clearchat" + ChatColor.GRAY+ " - Clears the chat for all players!");
-        sender.sendMessage(ChatColor.GOLD + "/mutechat" + ChatColor.GRAY+ " - Mutes the chat so no one can talk (Can be bypassed with the permission" + ChatColor.GOLD + " chattools.mutechat.bypass");
+        sender.sendMessage(ChatColor.GOLD + "/mutechat" + ChatColor.GRAY+ " - Mutes the chat so no one can talk (Can be bypassed with the permission" + ChatColor.GOLD + " chattools.mutechat.bypass" + ChatColor.GRAY + ")");
         sender.sendMessage(ChatColor.GRAY + "----------------------------------------------------");
         return true;
     }
