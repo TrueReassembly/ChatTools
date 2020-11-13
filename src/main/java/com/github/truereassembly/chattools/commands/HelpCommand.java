@@ -1,4 +1,4 @@
-package com.github.truereassembly.chattools.Commands;
+package com.github.truereassembly.chattools.commands;
 
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
