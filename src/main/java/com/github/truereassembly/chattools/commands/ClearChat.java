@@ -28,6 +28,7 @@ public class ClearChat implements CommandExecutor {
                 Bukkit.broadcastMessage(result);
             } else if (args.length == 1) {
                 Player selectedPlayer = Bukkit.getPlayer(args[0]);
+                sender.sendMessage(ChatColor.GRAY + "Cleared chat for " + ChatColor.GOLD + selectedPlayer);
                 for (i = 0; i < 150; i++) {
                     assert selectedPlayer != null;
                     selectedPlayer.sendMessage("");

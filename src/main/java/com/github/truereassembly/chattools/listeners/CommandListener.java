@@ -12,7 +12,7 @@ public class CommandListener implements Listener {
     // public void addToBlacklist(String s) { blacklistedCommands.add(s); System.out.println("CommandListener: Recieved " + s + " as input and now is adding it to the blacklist");}
     @EventHandler
     public void onCommand(PlayerCommandPreprocessEvent event) {
-        if (event.getMessage().equalsIgnoreCase( "minecraft:me")) {
+        if (event.getMessage().equalsIgnoreCase( "/minecraft:me")) {
             event.setCancelled(true);
             event.getPlayer().sendMessage(ChatColor.RED + "This command is blocked!");
         }
