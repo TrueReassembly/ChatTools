@@ -1,5 +1,6 @@
 package com.github.truereassembly.chattools.commands;
 
+import com.github.truereassembly.chattools.ChatTools;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
@@ -10,24 +11,34 @@ import org.bukkit.entity.Player;
 
 public class MuteChat implements CommandExecutor {
 
-
-    public boolean chatMuted;
+    Player player;
+    ChatTools plugin;
+    String prefix;
+    public MuteChat(ChatTools instance) {
+        plugin = instance;
+        prefix = ChatColor.translateAlternateColorCodes('&', plugin.getPrefix());
+    }
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        Player player = (Player) sender;
-        if (!chatMuted) {
-            chatMuted = true;
-            String template = ChatColor.translateAlternateColorCodes('&', "&7[ChatTools] &6%s &7muted the chat");
-            String result = String.format(template, player.getDisplayName());
+        if (sender instanceof Player) {
+            player = (Player) sender;
+        } else {
+            sender.sendMessage("Only a player can run this command");
+        }
+        if (!plugin.getChatMuted()) {
+            plugin.setChatMuted(true);
+            String template = ChatColor.translateAlternateColorCodes('&', "%s &6%s &7muted the chat");
+            String result = String.format(template, prefix, player.getDisplayName());
             Bukkit.broadcastMessage(result);
         } else {
-            chatMuted = false;
-            String template = ChatColor.translateAlternateColorCodes('&', "&7[ChatTools] &6%s &7unmuted the chat");
-            String result = String.format(template, player.getDisplayName());
+            plugin.setChatMuted(false);
+            String template = ChatColor.translateAlternateColorCodes('&', "%s &6%s &7unmuted the chat");
+            String result = String.format(template, prefix, player.getDisplayName());
             Bukkit.broadcastMessage(result);
         }
         return true;
     }
 
 }
+

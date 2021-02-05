@@ -6,9 +6,9 @@ authors: [Reassembly]
 description: Control your chat with this simple plugin!
 commands:
   clearchat:
-      description: Clears the chat
-      usage: /clearchat
-      permission: chattools.clearchat
+    description: Clears the chat
+    usage: /clearchat
+    permission: chattools.clearchat
   mutechat:
     description: Mutes the chat
     usage: /mutechat
@@ -17,3 +17,7 @@ commands:
     description: Gives you all the commands
     usage: /chattools
     permission: chattools
+#  reloadchattools:
+#    description: Reloads config
+#    usage: /reloadchattools
+#    permission: chattools.reload

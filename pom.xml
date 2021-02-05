@@ -6,7 +6,7 @@
 
     <groupId>com.github.truereassembly</groupId>
     <artifactId>ChatTools</artifactId>
-    <version>Release 1</version>
+    <version>Release-1.2</version>
     <packaging>jar</packaging>
 
     <name>ChatTools</name>
